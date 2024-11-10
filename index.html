@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirvana</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        .top-banner {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            z-index: 50;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: serif;
+            font-size: 24px;
+        }
+
+        .icon-group {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: black;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .main-content {
+            padding-top: 112px;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 16px;
+            margin-bottom: 24px;
+        }
+
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .category-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .category-name {
+            font-size: 14px;
+        }
+
+        .featured-product {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .featured-product img {
+            width: 100%;
+            height: 384px;
+            object-fit: cover;
+        }
+
+        .product-overlay {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 24px;
+            max-width: 320px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .shop-now-btn {
+            margin-top: 16px;
+            background: white;
+            color: black;
+            padding: 8px 24px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            padding: 0 16px;
+        }
+
+        .collection-item {
+            position: relative;
+        }
+
+        .collection-item img {
+            width: 100%;
+            height: 256px;
+            object-fit: cover;
+        }
+
+        .collection-title {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="top-banner">
+            Shop New FALL Collection
+        </div>
+        <div class="nav-container">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+
+            <div class="logo">FableStreet</div>
+
+            <div class="icon-group">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <div class="cart-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="categories">
+            <div class="category">
+                <div class="category-image">
+                    <img src="Images/Saree.png" alt="Sarees">
+                </div>
+                <span class="category-name">Sarees</span>
+            </div>
+            <div class="category">
+                <div class="category-image">
+                    <img src="Images/Lehanga.png" alt="Lehangas">
+                </div>
+                <span class="category-name">Lehangas</span>
+            </div>
+            <div class="category">
+                <div class="category-image">
+                    <img src="Images/Kurta.png" alt="Kurtas">
+                </div>
+                <span class="category-name">Kurtas</span>
+            </div>
+            <div class="category">
+                <div class="category-image">
+                    <img src="Images/Tops.png" alt="Tops">
+                </div>
+                <span class="category-name">Tops</span>
+            </div>
+        </div>
+
+        <div class="featured-product">
+            <img src="Images/Cover.png" alt="Featured Sweater">
+            <div class="product-overlay">
+                <h2 class="product-title">Nirvana™ Sarees</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <span>ULTRA-SOFT</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <span>LIGHTWEIGHT</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <span>NON-ITCHY FABRIC</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <span>STRETCHABLE</span>
+                    </div>
+                </div>
+                <button class="shop-now-btn">SHOP NOW</button>
+            </div>
+        </div>
+
+        <div class="collection-grid">
+            <div class="collection-item">
+                <img src="Images/1.png" alt="Bestsellers">
+                <h3 class="collection-title">BESTSELLERS</h3>
+            </div>
+            <div class="collection-item">
+                <img src="Images/4.png" alt="Modern Workwear">
+                <h3 class="collection-title">MODERN WORKWEAR</h3>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
